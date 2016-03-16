@@ -27,13 +27,14 @@ git clone https://github.com/php/php-src.git
 cd php-src
 git checkout PHP-7.0.4
 git pull
-./buildconf --fo xrce
+./buildconf --fo xrce --force
 
 CONFIGURE_STRING="--prefix=/usr/local/php7 \
                   --with-config-file-scan-dir=/usr/local/php7/etc/conf.d \
                   --without-pear \
                   --enable-bcmath \
                   --with-bz2 \
+                  --with-xdebug \
                   --enable-calendar \
                   --enable-intl \
                   --enable-exif \
@@ -41,6 +42,7 @@ CONFIGURE_STRING="--prefix=/usr/local/php7 \
                   --enable-ftp \
                   --with-gettext \
                   --with-gd \
+		          --with-xsl=/usr/include/libxslt \
                   --with-jpeg-dir \
                   --enable-mbstring \
                   --with-mcrypt \
